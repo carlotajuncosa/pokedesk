@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pokédex | Pokemon.es</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./pokedex.js" defer></script>
+    <script src="./helpers.js" defer></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/2052px-Pok%C3%A9_Ball_icon.svg.png"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+        alt="pokemon logo"
+        class="logo"
+      />
+    </header>
+
+    <!-- MAIN -->
+
+    <main>
+      <div class="main-title">
+        <div class="h1-container"><h1>Pokédex</h1></div>
+      </div>
+
+      <div class="user-interaction">
+        <div class="text-button-align">
+          <h2>Nombre, número o tipo</h2>
+          <div class="search-engine-display">
+            <input type="text" name="filter" />
+         <!-- DISCARTED BUTTON 
+          to create LATER an autocomplete on an Input Field  <button class="btn">
+              <img src="/magnifier.png" alt="magnifier" class="magnifier" />
+            </button> -->
+          </div>
+          <p>
+            ¡Usa la búsqueda avanzada para encontrar Pokémon por su tipo,
+            debilidad y demás datos!
+          </p>
+        </div>
+        <div class="text-button-align">
+          <div class="green">
+            <h3>
+              Busca un Pokémon por su nombre o usando su número de la Pokédex
+              Nacional.
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-poke">
+        <div class="pokemon-container">
+          <ol id="pokedex"></ol>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <img src="/fakefooter.png" alt="footer">
+    </footer>
+  </body>
+</html>
