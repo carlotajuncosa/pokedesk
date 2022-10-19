@@ -2,6 +2,7 @@ const pokedex$$ = document.querySelector("#pokedex");
 const searchInput$$ = document.querySelector("input[name=filter]");
 let ALL_POKEMONS_INFO = []; //MAYUS cuando una variable global scope puede ser usada por todas
 
+//Recibiendo informacion de la api de pokemon
 const getAllPokemons = () =>
   fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then((response) => response.json())
@@ -29,6 +30,7 @@ const getOnePokemon = async (url) => {
   }
 };
 
+//renderizando elementos dinámicos
 const renderTypes = (types, container) => {
   const div$$ = document.createElement("div");
   div$$.classList.add("card-subtitle", "types-container");
@@ -52,18 +54,17 @@ const renderTypes = (types, container) => {
 const cleanPokedex = () => (pokedex$$.innerHTML = "");
 
 const renderNoResults = () => {
-  
-  const divError$$ = document.createElement('div');
+  const divError$$ = document.createElement("div");
   divError$$.classList.add("border-error");
 
   const pRed$$ = document.createElement("p");
   pRed$$.classList.add("card-title-error");
   pRed$$.textContent = "¡Ningún pokemon coincide con tu búsqueda!";
-  
+
   const pGrey$$ = document.createElement("p");
   pGrey$$.classList.add("card-subtitle-error");
   pGrey$$.textContent = "Prueba estas sugerencias para encontrar un Pokémon:";
-  
+
   const pGrey1$$ = document.createElement("p");
   pGrey1$$.classList.add("card-subtitle-error");
   pGrey1$$.textContent = "· Reduce el número de parámetros de búsqueda";
@@ -82,9 +83,6 @@ const renderNoResults = () => {
   divError$$.appendChild(pGrey1$$);
   divError$$.appendChild(pGrey2$$);
   divError$$.appendChild(pGrey3$$);
-  
-  
-
 };
 
 const renderPokemonCard = (poke) => {
@@ -114,7 +112,7 @@ const renderPokemonCard = (poke) => {
 
   divId$$.textContent = "N.º" + idFinal;
 
- /* OTRA VERSIÓN DE LA LÍNEA 86-90
+  /* OTRA VERSIÓN DE LA LÍNEA 109-115
   if (poke.id.toString().length == 1) {
     divId$$.textContent = "N.º" + "00" + poke.id;
   } else if (poke.id.toString().length == 2) {
@@ -157,7 +155,7 @@ const addEventsListeners = () => {
 //FUNCIÓN MADRE
 const init = async () => {
   addEventsListeners();
-  const allPokemons = await getAllPokemons(); 
+  const allPokemons = await getAllPokemons();
 
   for (const pokemon of allPokemons) {
     const pokemonIndividualInfo = await getOnePokemon(pokemon.url);
