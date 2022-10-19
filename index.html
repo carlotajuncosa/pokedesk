@@ -36,10 +36,11 @@
       </div>
 
       <div class="user-interaction">
+        <form autocomplete="off" action="/action_page.php"></form>
         <div class="text-button-align">
           <h2>Nombre, número o tipo</h2>
-          <div class="search-engine-display">
-            <input type="text" name="filter" />
+          <div class="search-engine-display autocomplete">
+            <input id="myInput" type="text" name="filter" placeholder="..."/>
             <!-- DISCARTED BUTTON 
           to create LATER an autocomplete on an Input Field  <button class="btn">
               <img src="/magnifier.png" alt="magnifier" class="magnifier" />
@@ -58,6 +59,7 @@
             </h3>
           </div>
         </div>
+      </form>
       </div>
 
       <div class="main-poke">
